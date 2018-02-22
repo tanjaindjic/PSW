@@ -1,0 +1,185 @@
+{
+    "type": "array",
+    "items": {
+      "type": "package"
+    },
+  "types": {
+    "package": {
+      "naziv": {
+        "type": "nameTranslate"
+      },
+      "packageType": {
+        "type": "packType"
+      },
+      "tables": {
+        "type": "array",
+        "items": {
+          "type": "table"
+        }
+      },
+      "packages": {
+        "type": "array",
+        "items": {
+          "type": "package"
+        }
+      }
+    },
+    "table": {
+      "naziv": {
+        "type": "nameTranslate"
+      },
+      "polja": {
+        "type": "array",
+        "items": {
+          "type": "atribute"
+        }
+      },
+      "fKeys": {
+        "type": "array",
+        "items": {
+          "type": "fKey"
+        }
+      },
+      "keys": {
+          "type": "array",
+          "items": {
+            "type": "key"
+        },
+        "pKey": {
+          "type": "int"
+        }
+      },
+      "constraint": {
+        "type": "array",
+        "items": {
+          "type": "constraintTorka"
+        }
+      }
+    },
+    "nameTranslate": {
+      "code": {
+        "type": "string"
+      },
+      "translate": {
+        "type": "array",
+        "items": {
+          "type": "translation"
+        }
+      }
+    },
+    "atribute": {
+      "domain": {
+        "dType": {
+          "type": "tip"
+        },
+        "length": {
+          "type": "int"
+        }
+      },
+      "name": {
+        "type": "nameTranslate"
+      },
+      "isNull": {
+        "type": "boolean"
+      },
+      "Unique": {
+        "type": "boolean"
+      }
+    },
+    "tip": {
+      "enum": [
+        "int",
+        "string",
+        "float",
+        "boolean",
+        "varchar"
+      ]
+    },
+    "fKey": {
+      "connectedTable": {
+        "type": "string"
+      },
+      "homeIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "foreignIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "key": {
+      "type": "array",
+      "items": {
+        "type": "id_id"
+      }
+    },
+    "constraintTorka": {
+      "firstIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "secondIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "consType": {
+        "type": "constraintOperation"
+      }
+    },
+    "constraintOperation": {
+      "conType": {
+        "type": "constraintType"
+      },
+      "description": {
+        "type": "string"
+      }
+    },
+    "language": {
+      "langId": {
+        "type": "string"
+      },
+      "langName": {
+        "type": "string"
+      }
+    },
+    "id_id": {
+      "tableKey": {
+        "type": "string"
+      },
+      "atributKey": {
+        "type": "string"
+      }
+    },
+    "constraintType": {
+      "enum": [
+        "Functional",
+        "Logical",
+        "Semantic"
+      ]
+    },
+    "packType": {
+      "enum": [
+        "System",
+        "Subsystem",
+        "Package"
+      ]
+    },
+    "translation": {
+      "lang": {
+        "type": "string"
+      },
+      "tr": {
+        "type": "string"
+      
+    }
+  }
+}
